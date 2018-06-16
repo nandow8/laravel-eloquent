@@ -27,6 +27,11 @@ Route::get('one-to-many-insert', 'OneToManyController@oneToManyInsert');
 Route::get('one-to-many-insert-two', 'OneToManyController@oneToManyInsertTwo');
 
 
+//Has Many Through
+
+Route::get('has-many-through', 'OneToManyController@hasManyThrough');
+
+
 
 
 
