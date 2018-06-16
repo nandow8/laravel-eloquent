@@ -46,4 +46,25 @@ class OneToManyController extends Controller
 
         echo $country->name;
     }
+
+    public function oneToManyTwo(){
+        //trazer estados em uma unica consulta, melhorando a performance
+        $counties = Country::with('states')->get();
+        
+        foreach ($counties as $country) {
+            echo "<b> $country->name </b><br/>";
+            $states = $country->states()->get();
+
+            foreach ($states as $state) {
+                echo "$state->initials - $state->name <br/>";
+                foreach ($state->cities as $city) {
+                    echo "{$city->name}";
+                }
+            }
+        }
+
+        //caso queria chamar os estados e cidades:
+        $cidadesEstados = State::with('cities')->get();
+        dd($cidadesEstados);
+    }
 }
