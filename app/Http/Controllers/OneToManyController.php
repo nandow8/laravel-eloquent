@@ -22,6 +22,9 @@ class OneToManyController extends Controller
         //exibindo estados vinculados ao pais Brasil
         $counties = Country::where('name', 'Like', '%Brasil%')->get();
         //$counties = Country::all(); //chamar todos paises e estados
+
+        //trazer estados em uma unica consulta, melhorando a performance
+        $counties = Country::with('states')->get();
         
         foreach ($counties as $country) {
             echo "<b> $country->name </b><br/>";
