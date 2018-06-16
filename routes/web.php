@@ -32,7 +32,9 @@ Route::get('one-to-many-insert-two', 'OneToManyController@oneToManyInsertTwo');
 Route::get('has-many-through', 'OneToManyController@hasManyThrough');
 
 
+//Many To Many
 
+Route::get('many-to-many', 'ManyToManyController@manyToMany');
 
 
 // Route::get('/', function () {
