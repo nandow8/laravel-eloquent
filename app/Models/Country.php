@@ -20,4 +20,8 @@ class Country extends Model
         //se o id da tabela Country nao ter o nome padrao 'id', é preciso um terceiro parametro informando o nome do id
         return $this->hasOne('App\Models\Location', 'country_id', 'id');
     }
+
+    public function states(){
+        return $this->hasMany(State::class);
+    }
 }
