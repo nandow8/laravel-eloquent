@@ -41,7 +41,8 @@ Route::get('many-to-many-insert', 'ManyToManyController@manyToManyInsert');
 
 //Pholymorphic
 
-Route::get('polymorphics', 'PolymorphicController@polymorphic');
+ 
+Route::get('polymorphics-insert', 'PolymorphicController@polymorphicInsert');
 
 
 
