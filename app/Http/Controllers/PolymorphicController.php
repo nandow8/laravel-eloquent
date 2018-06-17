@@ -10,7 +10,15 @@ use App\Models\Comment;
 
 class PolymorphicController extends Controller
 {
-     
+    public function polymorphic(){
+        $city = City::where('name', 'Suzano')->get()->first();
+        echo $city->name . '<br>';
+        $comments = $city->comments()->get();
+
+        foreach ($comments as $comment) {
+            echo $comment->description;
+        }
+    }
 
     public function polymorphicInsert(){
         $city = City::where('name', 'Suzano')->get()->first();
